@@ -1,0 +1,42 @@
+package com.motivecloud.shop.services;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.motivecloud.shop.data.Customer;
+import com.motivecloud.shop.data.ShopDAO;
+
+@Component
+public class CustomerService {
+	
+	@Autowired
+	private ShopDAO shopDAO;
+	
+
+	public Customer createCustomer(Customer customer) {
+		System.out.println("createCustomer >>>");
+   		String id = UUID.randomUUID().toString();
+   		customer.setId(id);
+   		shopDAO.save(customer);
+   		System.out.println("Created customer " + customer.getId());
+   		System.out.println("createCustomer <<<");
+   		return customer;
+	}
+	
+	public Customer getCustomer(String id) {
+		final Customer customer = shopDAO.findOne(id);
+		if (customer == null) {
+			System.err.println("Customer not found");
+			return new Customer();
+		}	
+		return customer;
+	}
+	
+	public List<Customer> getCustomers() {
+		System.out.println("getCustomers >>>");
+		return shopDAO.findAll();
+	}
+}
