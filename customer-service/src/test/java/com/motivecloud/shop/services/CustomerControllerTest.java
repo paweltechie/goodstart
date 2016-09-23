@@ -19,16 +19,16 @@ public class CustomerControllerTest {
 		mvc = MockMvcBuilders.standaloneSetup(new CustomerController()).build();
 	}
 	
-	@Test
-	public void createCustomer() throws Exception {
-			
-		mvc.perform(MockMvcRequestBuilders.post("/customers")
-	            .accept(MediaType.APPLICATION_JSON_VALUE)
-	            .content("{\"id\":1,\"firstName\":\"Pawel\",\"lastName\":\"Nowicki\",\"street\":null,\"city\":null,\"state\":null,\"zip\":null,\"country\":null}")
-	            .contentType(MediaType.APPLICATION_JSON_VALUE));
-		
-		
-	}
+//	@Test
+//	public void createCustomer() throws Exception {
+//			
+//		mvc.perform(MockMvcRequestBuilders.post("/customers")
+//	            .accept(MediaType.APPLICATION_JSON_VALUE)
+//	            .content("{\"id\":1,\"firstName\":\"Pawel\",\"lastName\":\"Nowicki\",\"street\":null,\"city\":null,\"state\":null,\"zip\":null,\"country\":null}")
+//	            .contentType(MediaType.APPLICATION_JSON_VALUE));
+//		
+//		
+//	}
 	
 //	@Test
 //	public void getCustomer() throws Exception {

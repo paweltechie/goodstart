@@ -1,4 +1,4 @@
-package com.motivecloud.shop.data;
+package com.motivecloud.shop.domain;
 
 import java.util.List;
 

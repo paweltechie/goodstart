@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.motivecloud.shop.data.Customer;
+import com.motivecloud.shop.domain.Customer;
 
 @RestController
 @RequestMapping("/customers")

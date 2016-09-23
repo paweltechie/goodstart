@@ -6,8 +6,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.motivecloud.shop.data.Customer;
-import com.motivecloud.shop.data.ShopDAO;
+import com.motivecloud.shop.domain.Customer;
+import com.motivecloud.shop.domain.ShopDAO;
 
 @Component
 public class CustomerService {
