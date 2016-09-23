@@ -25,8 +25,9 @@ public class CustomerController {
    }
 
    @RequestMapping(method = RequestMethod.POST)
-   @ResponseBody
    public Customer createCustomer(@RequestBody Customer customer) {
+	   System.err.println("is customer null " + (customer == null));
+	   System.err.println("is customerService null " + (customerService == null));
 	   return customerService.createCustomer(customer);
    }
 
@@ -39,5 +40,10 @@ public class CustomerController {
    @ResponseBody
    public List<Customer> getCustomers() {
 	   return customerService.getCustomers();
+   }
+   
+   
+   public void setCustomerService(CustomerService customerService) {
+	   this.customerService = customerService;
    }
 }

@@ -1,12 +1,7 @@
 package com.motivecloud.shop.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class Customer {
-
-	@Id
+	
    private String id;
    private String firstName;
    private String lastName;
@@ -80,7 +75,6 @@ public class Customer {
       this.country = country;
    }
    
-   @Override
    public String toString() {
 	   return getId() + " - " + getFirstName() + " - " + getLastName();
    }

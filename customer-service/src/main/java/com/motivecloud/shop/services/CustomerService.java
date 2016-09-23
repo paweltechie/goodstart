@@ -14,16 +14,18 @@ public class CustomerService {
 	
 	@Autowired
 	private ShopDAO shopDAO;
-	
 
 	public Customer createCustomer(Customer customer) {
+		
+		System.err.println("shopDAO " + (shopDAO == null));
+		
 		System.out.println("createCustomer >>>");
    		String id = UUID.randomUUID().toString();
    		customer.setId(id);
-   		shopDAO.save(customer);
+   		Customer customerUpdated = shopDAO.save(customer);
    		System.out.println("Created customer " + customer.getId());
    		System.out.println("createCustomer <<<");
-   		return customer;
+   		return customerUpdated;
 	}
 	
 	public Customer getCustomer(String id) {
