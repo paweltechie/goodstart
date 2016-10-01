@@ -17,24 +17,32 @@ public class CustomerService {
 
 	public Customer createCustomer(Customer customer) {
 		
-		System.err.println("shopDAO " + (shopDAO == null));
-		
 		System.out.println("createCustomer >>>");
    		String id = UUID.randomUUID().toString();
    		customer.setId(id);
    		Customer customerUpdated = shopDAO.save(customer);
-   		System.out.println("Created customer " + customer.getId());
+//   		System.out.println("Created customer " + customerUpdated.getId());
    		System.out.println("createCustomer <<<");
    		return customerUpdated;
 	}
 	
+	public Customer updateCustomer(Customer customer) {
+		
+		System.out.println("updateCustomer >>>");
+		if (shopDAO.exists(customer.getId())) {
+			Customer customerUpdated = shopDAO.save(customer);
+   			return customerUpdated;
+		} else {
+			return null;
+		}
+	}
+
 	public Customer getCustomer(String id) {
-		final Customer customer = shopDAO.findOne(id);
-		if (customer == null) {
-			System.err.println("Customer not found");
-			return new Customer();
-		}	
-		return customer;
+//		if (shopDAO.exists(id)) {
+			final Customer customer = shopDAO.findOne(id);
+			return customer;
+//		}
+//		return null;
 	}
 	
 	public List<Customer> getCustomers() {

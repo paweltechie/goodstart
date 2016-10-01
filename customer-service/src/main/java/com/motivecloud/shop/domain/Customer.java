@@ -15,6 +15,7 @@ public class Customer {
    private String state;
    private String zip;
    private String country;
+   private String email;
 
    public String getId() {
       return id;
@@ -80,7 +81,16 @@ public class Customer {
       this.country = country;
    }
    
-   @Override
+   
+   public String getEmail() {
+	return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
    public String toString() {
 	   return getId() + " - " + getFirstName() + " - " + getLastName();
    }

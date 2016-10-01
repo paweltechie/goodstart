@@ -10,9 +10,13 @@ public interface ShopDAO extends CrudRepository<Customer, String> {
 
 	public List<Customer> findByLastName(String lastName);
 	
+	public List<Customer> findByEmail(String email);
+	
 	public Customer findOne(String id);
 	
 	public List<Customer> findAll();
 	
 	public Customer save(Customer customer);
+	
+	public boolean exists(String id);
 }
