@@ -15,38 +15,46 @@ public class CustomerService {
 	@Autowired
 	private ShopDAO shopDAO;
 
-	public Customer createCustomer(Customer customer) {
+	// Post
+	public Customer createCustomer(Customer customer) throws FieldValidationException {
 		
-		System.out.println("createCustomer >>>");
-   		String id = UUID.randomUUID().toString();
-   		customer.setId(id);
-   		Customer customerUpdated = shopDAO.save(customer);
-//   		System.out.println("Created customer " + customerUpdated.getId());
-   		System.out.println("createCustomer <<<");
-   		return customerUpdated;
+		if (customer.getFirstName() == null || customer.getFirstName().trim().equals("")) throw new FieldValidationException();
+		if (customer.getLastName() == null || customer.getLastName().trim().equals("")) throw new FieldValidationException();
+		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) throw new FieldValidationException(); 
+		
+   		Customer returnCustomer = shopDAO.save(customer);
+
+   		return returnCustomer;
 	}
 	
-	public Customer updateCustomer(Customer customer) {
+	// Put
+	public void updateCustomer(Customer customer) throws FieldValidationException {
 		
-		System.out.println("updateCustomer >>>");
-		if (shopDAO.exists(customer.getId())) {
-			Customer customerUpdated = shopDAO.save(customer);
-   			return customerUpdated;
-		} else {
-			return null;
-		}
+		if (customer.getId() == null || customer.getId().trim().equals("")) throw new FieldValidationException();
+		if (customer.getFirstName() == null || customer.getFirstName().trim().equals("")) throw new FieldValidationException();
+		if (customer.getLastName() == null || customer.getLastName().trim().equals("")) throw new FieldValidationException();
+		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) throw new FieldValidationException(); 
+		
+		Customer customerUpdated = shopDAO.save(customer);   		
 	}
 
-	public Customer getCustomer(String id) {
-//		if (shopDAO.exists(id)) {
-			final Customer customer = shopDAO.findOne(id);
-			return customer;
-//		}
-//		return null;
-	}
-	
-	public List<Customer> getCustomers() {
+	// Get all
+	public List<Customer> findAll() {
 		System.out.println("getCustomers >>>");
 		return shopDAO.findAll();
+	}
+	
+	// Get by ID
+	public Customer findOne(String id) throws FieldValidationException {
+		if (id == null || id.trim().equals("")) throw new FieldValidationException();
+		final Customer customer = shopDAO.findOne(id);
+		return customer;
+	}
+	
+	// Get by email
+	public Customer findByEmail(String email) throws FieldValidationException  {
+		if (email == null || email.trim().equals("")) throw new FieldValidationException();
+		final Customer customer = shopDAO.findByEmail(email);
+		return customer;
 	}
 }

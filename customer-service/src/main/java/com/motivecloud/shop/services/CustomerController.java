@@ -40,23 +40,25 @@ public class CustomerController {
    }
    
    @RequestMapping(method = RequestMethod.PUT)
-   public Customer updateCustomer(@RequestBody Customer customer) {
-	   return customerService.createCustomer(customer);
+   public void updateCustomer(@RequestBody Customer customer) {
+	   System.err.println("we are here updateCustomer");
+	   customerService.updateCustomer(customer);
    }
 
-   @RequestMapping(path = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+   @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public @ResponseBody Customer getCustomer(@PathVariable String id) {
-	   return customerService.getCustomer(id);
+	   return customerService.findOne(id);
    }
 
-   @RequestMapping(path = "/email", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-   public @ResponseBody String getCustomerEmail(@PathVariable String id) {
-	   return customerService.getCustomer(id).getEmail();
+   @RequestMapping(path = "/email/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+   public @ResponseBody Customer getCustomerEmail(@PathVariable String email) {
+	   System.err.println("email" + email);
+	   return customerService.findByEmail(email);
    }
    
-   @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+   @RequestMapping(path = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public @ResponseBody List<Customer> getCustomers() {
-	   return customerService.getCustomers();
+	   return customerService.findAll();
    }
 
    

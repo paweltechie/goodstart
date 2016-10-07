@@ -92,6 +92,6 @@ public class Customer {
 
 	@Override
    public String toString() {
-	   return getId() + " - " + getFirstName() + " - " + getLastName();
+	   return getId() + " - " + getFirstName() + " - " + getLastName() + " - " + getStreet() + " - " + getCity()+ " - " +getState()+ " - " +getZip()+ " - " +getCountry()+ " - " +getEmail();
    }
 }

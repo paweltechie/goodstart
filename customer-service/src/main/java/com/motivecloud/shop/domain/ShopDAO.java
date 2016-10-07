@@ -8,11 +8,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ShopDAO extends CrudRepository<Customer, String> {
 
-	public List<Customer> findByLastName(String lastName);
-	
-	public List<Customer> findByEmail(String email);
-	
 	public Customer findOne(String id);
+	
+	public Customer findByEmail(String email);
 	
 	public List<Customer> findAll();
 	
