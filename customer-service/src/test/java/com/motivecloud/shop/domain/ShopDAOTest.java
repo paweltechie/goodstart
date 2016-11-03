@@ -1,9 +1,11 @@
 package com.motivecloud.shop.domain;
 
-import static org.junit.Assert.*;
-import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.*;
-
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.AFTER_TEST_METHOD;
+import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.BEFORE_TEST_METHOD;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +15,6 @@ import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.motivecloud.shop.domain.Customer;
-import com.motivecloud.shop.domain.ShopDAO;
-import com.motivecloud.shop.services.FieldValidationException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -79,12 +77,16 @@ public class ShopDAOTest {
 		@Sql(scripts = "classpath:populateCustomerTableTest.sql", executionPhase = BEFORE_TEST_METHOD),
 		@Sql(scripts = "classpath:truncateCustomerTableTest.sql", executionPhase = AFTER_TEST_METHOD)
 		})
+	
 	@Test
 	public void findAllTest() {
-		List<Customer> customers = shopDao.findAll();
-		System.err.println(customers.size());
-		for (Customer customer : customers)
-			System.err.println(customer.toString());
-		assertEquals(3, customers.size());
+		Iterable<Customer> customers = shopDao.findAll();
+		int countElements = 0;
+		for (Customer customer : customers) {
+			assertNotNull(customer.getId());
+			countElements++;
+		}
+		
+		assertEquals(3, countElements);
 	}
 }

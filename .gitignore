@@ -9,6 +9,7 @@ desktop.ini
 .metadata
 .settings
 .recommenders
+.DS_Store
 
 *.class
 

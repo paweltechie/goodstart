@@ -1,7 +1,5 @@
 package com.motivecloud.shop.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -57,7 +55,7 @@ public class CustomerController {
    }
    
    @RequestMapping(path = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-   public @ResponseBody List<Customer> getCustomers() {
+   public @ResponseBody Iterable<Customer> getCustomers() {
 	   return customerService.findAll();
    }
 

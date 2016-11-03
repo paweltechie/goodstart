@@ -1,8 +1,5 @@
 package com.motivecloud.shop.services;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,18 +25,20 @@ public class CustomerService {
 	}
 	
 	// Put
-	public void updateCustomer(Customer customer) throws FieldValidationException {
+	public Customer updateCustomer(Customer customer) throws FieldValidationException {
 		
 		if (customer.getId() == null || customer.getId().trim().equals("")) throw new FieldValidationException();
 		if (customer.getFirstName() == null || customer.getFirstName().trim().equals("")) throw new FieldValidationException();
 		if (customer.getLastName() == null || customer.getLastName().trim().equals("")) throw new FieldValidationException();
 		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) throw new FieldValidationException(); 
 		
-		Customer customerUpdated = shopDAO.save(customer);   		
+		Customer customerUpdated = shopDAO.save(customer);
+		
+		return customerUpdated;
 	}
 
 	// Get all
-	public List<Customer> findAll() {
+	public Iterable<Customer> findAll() {
 		System.out.println("getCustomers >>>");
 		return shopDAO.findAll();
 	}
