@@ -1,4 +1,4 @@
-package com.motivecloud.shop.domain;
+package com.motivecloud.nelson.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -21,7 +21,7 @@ import com.motivecloud.nelson.repository.CustomerRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ShopDAOTest {
+public class CustomerPersistenceTest {
 	
 	@Autowired
 	private CustomerRepository shopDao;

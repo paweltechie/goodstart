@@ -11,6 +11,7 @@ desktop.ini
 .settings
 .recommenders
 .DS_Store
+.springBeans
 
 *.class
 

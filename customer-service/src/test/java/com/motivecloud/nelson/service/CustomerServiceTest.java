@@ -1,4 +1,4 @@
-package com.motivecloud.shop.services;
+package com.motivecloud.nelson.service;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;

@@ -1,4 +1,4 @@
-package com.motivecloud.shop.services;
+package com.motivecloud.nelson.service;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.AFTER_TEST_METHOD;

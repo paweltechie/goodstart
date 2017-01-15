@@ -13,6 +13,7 @@
        <groupId>com.motivecloud</groupId>
        <artifactId>build</artifactId>
        <version>0.1</version>
-   </parent>
+       <relativePath>../build</relativePath>
+  </parent>
    
 </project>
