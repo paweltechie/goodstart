@@ -3,14 +3,14 @@ package com.motivecloud.shop.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.motivecloud.shop.domain.Customer;
-import com.motivecloud.shop.domain.ShopDAO;
+import com.motivecloud.nelson.domain.Customer;
+import com.motivecloud.nelson.repository.CustomerRepository;
 
 @Component
 public class CustomerService {
 	
 	@Autowired
-	private ShopDAO shopDAO;
+	private CustomerRepository shopDAO;
 
 	// Post
 	public Customer createCustomer(Customer customer) throws FieldValidationException {

@@ -15,15 +15,15 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.motivecloud.shop.domain.Customer;
-import com.motivecloud.shop.domain.ShopDAO;
+import com.motivecloud.nelson.domain.Customer;
+import com.motivecloud.nelson.repository.CustomerRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 public class CustomerServiceTest {
 
 	@Mock
-	ShopDAO	shopDAO;
+	CustomerRepository	shopDAO;
 	
 	@InjectMocks
 	CustomerService customerService;

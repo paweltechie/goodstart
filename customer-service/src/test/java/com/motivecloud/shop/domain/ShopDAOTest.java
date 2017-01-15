@@ -16,12 +16,15 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.motivecloud.nelson.domain.Customer;
+import com.motivecloud.nelson.repository.CustomerRepository;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ShopDAOTest {
 	
 	@Autowired
-	private ShopDAO shopDao;
+	private CustomerRepository shopDao;
 	
 	@Test(expected = JpaSystemException.class)
 	public void createCustomer_noId_exceptionThrown() {

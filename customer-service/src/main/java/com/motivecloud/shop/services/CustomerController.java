@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.motivecloud.shop.domain.Customer;
+import com.motivecloud.nelson.domain.Customer;
 
 @RestController
 @RequestMapping("/customers")
