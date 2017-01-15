@@ -3,6 +3,7 @@
 /test-classes/
 /Servers/
 /RemoteSystemsTempFiles/
+/build/
 
 privateApplicationContext.xml
 desktop.ini
