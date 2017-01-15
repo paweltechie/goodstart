@@ -8,5 +8,6 @@ import com.motivecloud.nelson.domain.Customer;
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, String> {
 
+	public Customer findByLastName(String lastName);
 	public Customer findByEmail(String email);
 }

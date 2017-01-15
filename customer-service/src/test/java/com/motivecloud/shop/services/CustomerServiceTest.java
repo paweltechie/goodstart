@@ -17,6 +17,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.motivecloud.nelson.domain.Customer;
 import com.motivecloud.nelson.repository.CustomerRepository;
+import com.motivecloud.nelson.service.CustomerService;
+import com.motivecloud.nelson.service.FieldValidationException;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest

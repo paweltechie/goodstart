@@ -1,4 +1,4 @@
-package com.motivecloud.shop.services;
+package com.motivecloud.nelson.service;
 
 public class FieldValidationException extends RuntimeException {
 

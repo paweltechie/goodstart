@@ -1,4 +1,4 @@
-package com.motivecloud.shop.services;
+package com.motivecloud.nelson.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
