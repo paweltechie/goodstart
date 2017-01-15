@@ -1,13 +1,12 @@
 package com.motivecloud.shop.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
 @Entity
+@Table
 public class Customer {
 
-	@Id
-   private String id;
+   private @Id String id;
    private String firstName;
    private String lastName;
    private String street;
