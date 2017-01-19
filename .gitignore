@@ -4,6 +4,7 @@
 /Servers/
 /RemoteSystemsTempFiles/
 /build/
+/mvn/
 
 privateApplicationContext.xml
 desktop.ini
@@ -12,6 +13,7 @@ desktop.ini
 .recommenders
 .DS_Store
 .springBeans
+.mvn
 
 *.class
 
@@ -22,6 +24,9 @@ desktop.ini
 *.jar
 *.war
 *.ear
+
+mvnw
+mvnw.cmd
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
