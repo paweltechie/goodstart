@@ -1,0 +1,19 @@
+debug: true
+logging:
+  path: /users/pawel/server/logs
+  level:
+    com.motivecloud.nelson: debug
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/nelson
+    username: root
+    password: zigzag
+    driver-class-name: com.mysql.jdbc.Driver
+  
