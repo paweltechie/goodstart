@@ -15,5 +15,20 @@
        <version>0.1</version>
        <relativePath>../build</relativePath>
   </parent>
-   
+	
+	
+
+	<dependencyManagement>
+	  <dependencies>
+	    <dependency>
+	      <groupId>org.springframework.data</groupId>
+	      <artifactId>spring-data-releasetrain</artifactId>
+	      <version>Hopper-SR6</version>
+	      <scope>import</scope>
+	      <type>pom</type>
+	    </dependency>
+	  </dependencies>
+	</dependencyManagement>
+
+	
 </project>

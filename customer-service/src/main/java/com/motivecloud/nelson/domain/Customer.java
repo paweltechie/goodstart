@@ -21,5 +21,5 @@ public @Data class Customer {
    private @NonNull String country;
    private @NonNull String email;
 
-   protected Customer() { }
+   public Customer() { }
 }

@@ -1,24 +1,17 @@
 package com.motivecloud.nelson.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.motivecloud.nelson.domain.Customer;
 import com.motivecloud.nelson.repository.CustomerRepository;
-import com.motivecloud.nelson.service.CustomerService;
-import com.motivecloud.nelson.service.FieldValidationException;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
