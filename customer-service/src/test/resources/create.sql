@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS nelson.customer (
   country VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
   PRIMARY KEY (id));
+ 

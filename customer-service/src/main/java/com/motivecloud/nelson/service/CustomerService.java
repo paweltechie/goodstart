@@ -35,7 +35,7 @@ public class CustomerService {
 		if (customer.getFirstName() == null || customer.getFirstName().trim().equals("")) throw new FieldValidationException();
 		if (customer.getLastName() == null || customer.getLastName().trim().equals("")) throw new FieldValidationException();
 		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) throw new FieldValidationException(); 
-		
+		logger.debug("we are here Customer Service updateCustomer");
 		Customer customerUpdated = shopDAO.save(customer);
 		
 		return customerUpdated;
