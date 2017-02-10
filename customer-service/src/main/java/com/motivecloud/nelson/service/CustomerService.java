@@ -1,5 +1,7 @@
 package com.motivecloud.nelson.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +10,8 @@ import com.motivecloud.nelson.repository.CustomerRepository;
 
 @Component
 public class CustomerService {
+	
+	private final Logger logger = LoggerFactory.getLogger(CustomerService.class);
 	
 	@Autowired
 	private CustomerRepository shopDAO;
@@ -39,7 +43,7 @@ public class CustomerService {
 
 	// Get all
 	public Iterable<Customer> findAll() {
-		System.out.println("getCustomers >>>");
+		logger.debug("getCustomers >>>");
 		return shopDAO.findAll();
 	}
 	

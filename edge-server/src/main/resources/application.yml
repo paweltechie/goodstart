@@ -1,0 +1,5 @@
+zuul:
+  ignoredServices: "*"
+  routes:
+    productcomposite:
+      path: /front-service/**
