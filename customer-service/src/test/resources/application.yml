@@ -1,9 +1,6 @@
-debug: true
-logging:
-  path: /users/pawel/server/logs
-  level:
-    com.motivecloud.nelson: debug
 spring:
+  application:
+    name: nelsoncustomer
   jpa:
     show-sql: true
     hibernate:
@@ -18,3 +15,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       connection-properties: useSSL = false
+server:
+  port: 8082
+  
+debug: false
+logging:
+  path: /users/pawel/server/logs
+  level:
+    com.motivecloud.nelson: debug

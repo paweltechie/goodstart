@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  nelson-db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=zigzag
+      - MYSQL_USER=pawel
+      - MYSQL_PASSWORD=zigzag
+      - MYSQL_DATABASE=nelson
+    ports:
+      - "3306:3306"
+
+      
+    

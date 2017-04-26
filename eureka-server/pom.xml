@@ -3,25 +3,34 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>nelson-eureka-service</artifactId>
+	<name>discovery-server</name>
+	<description>nelson by motive cloud</description>
+	 
+	<artifactId>eureka-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>eureka-service</name>
-	<description>Nelson Eureka Service</description>
-
 	<parent>
-       <groupId>com.motivecloud.nelson</groupId>
-       <artifactId>build</artifactId>
-       <version>0.1</version>
-       <relativePath>../build</relativePath>
-  	</parent>
+		<groupId>com.motivecloud.nelson</groupId>
+		<artifactId>build</artifactId>
+		<version>0.1</version>
+		<relativePath>../build</relativePath>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-
-
 </project>

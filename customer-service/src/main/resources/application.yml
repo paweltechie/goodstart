@@ -1,13 +1,10 @@
-debug: true
-logging:
-  path: /users/pawel/server/logs
-  level:
-    com.motivecloud.nelson: debug
 spring:
+  application:
+    name: nelsoncustomer
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
@@ -16,4 +13,13 @@ spring:
     username: root
     password: zigzag
     driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      connection-properties: useSSL = false
+server:
+  port: 8082
   
+debug: false
+logging:
+  path: /users/pawel/server/logs
+  level:
+    com.motivecloud.nelson: debug

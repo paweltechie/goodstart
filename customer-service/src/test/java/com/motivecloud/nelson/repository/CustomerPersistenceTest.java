@@ -10,7 +10,6 @@ import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.BEFORE_TE
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.test.context.jdbc.Sql;
@@ -18,7 +17,8 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.motivecloud.nelson.domain.Customer;
-import com.motivecloud.nelson.repository.CustomerRepository;
+
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -51,37 +51,37 @@ public class CustomerPersistenceTest {
 		assertNull(returnCustomer);
 	}
 	
-//	@SqlGroup({
-//		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
-//		 @Sql(scripts = "classpath:dropdata.sql", executionPhase = AFTER_TEST_METHOD)
-//		})
-//	@Test
+	@SqlGroup({
+		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
+		 @Sql(scripts = "classpath:dropdata.sql", executionPhase = AFTER_TEST_METHOD)
+		})
+	@Test
 	public void findOne_customerFound_returnCustomer() {
 		Customer returnCustomer = shopDao.findOne("100");
 		assertNotNull(returnCustomer);
 	}
 	
-//	@Test
+	@Test
 	public void findByEmail_noMatch_returnNull() {
 		Customer returnCustomer = shopDao.findByEmail("test@gmail.com");
 		assertNull(returnCustomer);
 	}
 	
-//	@SqlGroup({
-//		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
-//		@Sql(scripts = "classpath:import.sql", executionPhase = AFTER_TEST_METHOD)
-//		})
-//	@Test
+	@SqlGroup({
+		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
+		@Sql(scripts = "classpath:import.sql", executionPhase = AFTER_TEST_METHOD)
+		})
+	@Test
 	public void findByEmail_customerFound_returnCustomer() {
 		Customer returnCustomer = shopDao.findByEmail("paweltechie@gmail.com");
 		assertNotNull(returnCustomer);
 	}
 	
-//	@SqlGroup({
-//		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
-//		@Sql(scripts = "classpath:truncateCustomerTableTest.sql", executionPhase = AFTER_TEST_METHOD)
-//		})
-//	@Test
+	@SqlGroup({
+		@Sql(scripts = "classpath:data.sql", executionPhase = BEFORE_TEST_METHOD),
+		@Sql(scripts = "classpath:truncateCustomerTableTest.sql", executionPhase = AFTER_TEST_METHOD)
+		})
+	@Test
 	public void findAllTest() {
 		Iterable<Customer> customers = shopDao.findAll();
 		int countElements = 0;
