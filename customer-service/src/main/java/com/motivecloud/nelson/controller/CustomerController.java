@@ -46,7 +46,7 @@ public class CustomerController {
     	httpHeaders.setLocation(ServletUriComponentsBuilder
     			.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(customerDomain.getId()).toUri());
-    	return new ResponseEntity<>(null, httpHeaders, HttpStatus.CREATED);
+    	return new ResponseEntity<Customer>(null, httpHeaders, HttpStatus.CREATED);
     }
    
     @RequestMapping(method = RequestMethod.PUT)

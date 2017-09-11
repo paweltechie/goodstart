@@ -6,16 +6,14 @@ spring:
         enabled: true
         server:
             git: 
-              uri: https://github.com/paweltechie/config-repo
-              username: payweltechie
-              password: '{cipher}ccbf1e4f5a0ec0a311df3375cb132fab316ebc856f66160ff48938ab51d323c1'
-              searchPaths: /admin**,/league**
-            prefix: /config    
+              uri: https://github.com/paweltechie/nelson-config-repo
+              username: paweltechie
+              password: TOja7832
+#              searchPaths: /admin**,/league**
+#            prefix: /config    
 security:
   user:
-    password: watchit
-    name: admin     
-encrypt:
-  key: ${ENCRYPT_KEY:defaultkey} 
+    password: paweltechie
+    name: TOja7832
 server:
   port: 8888

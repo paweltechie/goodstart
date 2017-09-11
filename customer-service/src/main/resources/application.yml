@@ -1,6 +1,8 @@
 spring:
+  profiles:
+    active: local
   application:
-    name: nelsoncustomer
+    name: nelson-customer
   jpa:
     show-sql: true
     hibernate:
