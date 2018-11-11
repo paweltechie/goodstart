@@ -5,6 +5,10 @@
 /RemoteSystemsTempFiles/
 /mvn/
 
+# IDE specifict files
+*/.idea/
+*.iml
+
 privateApplicationContext.xml
 desktop.ini
 .metadata
