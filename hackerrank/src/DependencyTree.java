@@ -8,7 +8,6 @@ public class DependencyTree {
 
     public static void main(String args[]) {
         DependencyTree myApp = new DependencyTree();
-        myApp
     }
 
     private void buildTree() {
@@ -16,6 +15,7 @@ public class DependencyTree {
     }
 
     class Node {
+        public Node(int value) { this.value = value; }
         private List<Node> nextNode = new LinkedList<>();
         private int value;
         Iterator<Node> getNextNodes() { return nextNode.iterator(); }
@@ -25,7 +25,7 @@ public class DependencyTree {
     private void readInput(String file) {
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
-
+            // Node node = new Node();
         }
     }
 }
