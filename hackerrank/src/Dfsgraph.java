@@ -26,7 +26,7 @@ public class Dfsgraph {
             Iterator<Integer> adjI = adj[s].iterator();
             while (adjI.hasNext()) {
                 int n = adjI.next();
-                if (visited[n] != null && !visited[n]) {
+                if (visited[n] == null || !visited[n]) {
                     visited[n] = true;
                     outQueue.add(n);
                 }
