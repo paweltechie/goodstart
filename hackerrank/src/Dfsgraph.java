@@ -1,10 +1,7 @@
 import java.io.File;
 import java.util.*;
 
-public class Dfsgraph {
-
-    static int V, s;
-    static LinkedList[] adj;
+public class Dfsgraph extends Graph {
 
     public static void main(String[] args) {
         Dfsgraph myApp = new Dfsgraph();
@@ -34,22 +31,4 @@ public class Dfsgraph {
         }
     }
 
-    static LinkedList[] createGraph() {
-        try {
-            Scanner scanner = new Scanner(new File("inputData.txt"));
-            V = scanner.nextInt();
-            adj = new LinkedList[V];
-            for(int i=0; i<V; i++)
-                adj[i] = new LinkedList<Integer>();
-            scanner.nextLine();
-            while (scanner.hasNextLine()) {
-                String lineIn = scanner.nextLine();
-                System.out.println(lineIn);
-                adj[Integer.parseInt(lineIn.substring(3, 4))].add(Integer.parseInt(lineIn.substring(1, 2)));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
