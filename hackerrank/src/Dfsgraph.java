@@ -1,34 +1,39 @@
-import java.io.File;
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Dfsgraph extends Graph {
 
     public static void main(String[] args) {
         Dfsgraph myApp = new Dfsgraph();
         LinkedList[] G = myApp.createGraph();
-        myApp.dfs(adj, V, 3);
+        myApp.DFS(3);
     }
 
-    static void dfs(LinkedList[] adj, int V, int s) {
-        Boolean[] visited = new Boolean[V];
-        Queue<Integer> outQueue = new LinkedList<>();
+    // A function used by DFS
+    void DFSUtil(int v,boolean visited[])
+    {
+        // Mark the current node as visited and print it
+        visited[v] = true;
+        System.out.print(v+", ");
 
-        visited[s] = true;
-        outQueue.add(s);
-
-        while (outQueue.size() != 0) {
-            s = outQueue.remove();
-            System.out.print(s + ", ");
-
-            Iterator<Integer> adjI = adj[s].iterator();
-            while (adjI.hasNext()) {
-                int n = adjI.next();
-                if (visited[n] == null || !visited[n]) {
-                    visited[n] = true;
-                    outQueue.add(n);
-                }
-            }
+        // Recur for all the vertices adjacent to this vertex
+        Iterator<Integer> i = adj[v].listIterator();
+        while (i.hasNext())
+        {
+            int n = i.next();
+            if (!visited[n])
+                DFSUtil(n, visited);
         }
     }
 
+    // The function to do DFS traversal. It uses recursive DFSUtil()
+    void DFS(int v)
+    {
+        // Mark all the vertices as not visited(set as
+        // false by default in java)
+        boolean visited[] = new boolean[V];
+
+        // Call the recursive helper function to print DFS traversal
+        DFSUtil(v, visited);
+    }
 }

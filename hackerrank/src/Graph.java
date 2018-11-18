@@ -18,6 +18,7 @@ abstract class Graph {
                 String lineIn = scanner.nextLine();
                 System.out.println(lineIn);
                 adj[Integer.parseInt(lineIn.substring(3, 4))].add(Integer.parseInt(lineIn.substring(1, 2)));
+//                adj[Integer.parseInt(lineIn.substring(1, 2))].add(Integer.parseInt(lineIn.substring(3, 4)));
             }
         } catch (Exception e) {
             e.printStackTrace();
