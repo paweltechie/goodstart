@@ -7,29 +7,33 @@ public class NewYearChaos {
     }
 
     public static void minimumBribes(int[] q) {
-        int swap=0, chaos=0;
-        boolean swaped = false;
+        int swap=0, oneSwap=0;
+        boolean chaos = false;
         while (true) {
             for (int i=0; i<q.length; i++) {
-                swaped = false;
                 if (i + 1 < q.length) {
                     if (q[i] > q[i + 1]) {
                         int tmp = q[i];
                         q[i] = q[i + 1];
                         q[i + 1] = tmp;
+                        oneSwap++;
                         swap++;
-                        swaped = true;
+                        if (oneSwap > 2) {
+                            chaos = true;
+                            break;
+                        }
                     }
+                } else {
+                    break;
                 }
             }
-            chaos++;
             for (int i=0; i<q.length; i++) System.out.print(q[i]+", ");
             System.out.println();
-            if (chaos > 3) {
-                if (chaos > 3) System.out.println("To chaotic");
-                else System.out.println(swap);
-                break;
-            }
+        }
+        if (chaos)
+            System.out.println("To chaotic");
+        else
+            System.out.println(swap);
         }
     }
 }
